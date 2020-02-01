@@ -82,13 +82,13 @@ function sendTransaction(isAdding) {
   const amountEl = document.querySelector("#t-amount");
   const errorEl = document.querySelector(".form .error");
 
-  // validate form
-  if (nameEl.value === "" || amountEl.value === "") {
-    errorEl.textContent = "Missing Information";
-    return;
-  } else {
-    errorEl.textContent = "";
-  }
+  // // validate form
+  // if (nameEl.value === "" || amountEl.value === "") {
+  //   errorEl.textContent = "Missing Information";
+  //   return;
+  // } else {
+  //   errorEl.textContent = "";
+  // }
 
   // create record
   const transaction = {
