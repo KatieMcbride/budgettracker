@@ -10,14 +10,20 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
-
-
 // routes
 app.use(require("./routes/api.js"));
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://budgetuser:Ktbuh165!@ds035488.mlab.com:35488/heroku_qmcvlkvr", 
+  {
+  useMongoClient: true
+  }
+);
+
+
+
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
